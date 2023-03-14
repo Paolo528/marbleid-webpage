@@ -103,14 +103,14 @@ if selected == "Upload File":
             time.sleep(5)
 
 
-        url = "http://127.0.0.1:8000/uploaded_file"
+        url = "http://0.0.0.0:8000/uploaded_file"
         response=requests.post(url, files={"file": uploaded_file})
 
 
 
         #getting the prediction
 
-        url = "http://127.0.0.1:8000/data"
+        url = "http://0.0.0.0:8000/data"
         response = requests.get(url).text
         site1 = json.loads(response)
         site = site1["prediction"]
