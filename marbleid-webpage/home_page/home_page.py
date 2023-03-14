@@ -85,4 +85,4 @@ if selected == "Upload File":
         if response is not None:
             st.success("Sample analysed successfully!")
             if st.button("see results"):
-                webbrowser.open_new_tab("http://localhost:8502")
+                webbrowser.open_new_tab("https://paolo528-marbleid-marbleid-webpageresult-pageresult-page-nk878y.streamlit.app/")
