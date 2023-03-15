@@ -54,7 +54,20 @@ selected = option_menu(
 # for loop for getting correct site displayed
 groups = ['Aphrodisias I', 'Aphrodisias II', 'Carrara', 'Dokimeion', 'Herakleia', 'Miletos', 'Paros (Chorodaki)', 'Paros (Lychnites)', 'Paros (Marathi)', 'Penteli', 'Prokonnesos', 'Prokonnesos III', 'Thasos Aliki']
 
-groups_dict = {'Aphrodisias I': 'bla1', 'Aphrodisias II': 'bla1', 'Carrara': 'bla3', 'Dokimeion': 'bla4', 'Herakleia': 'bla5', 'Miletos': 'bla6', 'Paros (Chorodaki)': 'bla7', 'Paros (Lychnites)': 'bla8', 'Paros (Marathi)': 'bla9', 'Penteli': 'bla10', 'Prokonnesos': 'bla11', 'Prokonnesos III': 'bla12', 'Thasos Aliki': 'bla13'}
+groups_sites = ['Carrara', 'Pentelikon', 'Paros', 'Dokimeion', 'Herakleia', 'Miletos', 'Prokonnesos', 'Thasos', 'Aphrodisias']
+
+groups_sites_dict = {'Carrara': "Carrara or Luni as it was called in the Roman times is a marble district located Apuan Alps in the northwestern part of the Italian peninsula; it is a region renowned for its white marble used for high quality sculpture and for the public architecture of the city of Rome. Thequarrying district includes four large areas (Ital. bacini): Pescina-Boccanaglia, Torano, Miseglia and Colonnata that were exploited continuously from Antiquity to the present days. Lunensian marble is a particularly fine-grained white marble with a high proportion of accessory minerals (quartz, mica, dolomite), which leads to the comparatively frequent occurrence of banding.",
+                     'Pentelikon': "The quarrying district Mount Pentelikon is located about 14 km northeast of Athens. Its exploitation probably began in 6th c. B.C., reached a peak in Classical period (5th c. BC), when the material was used for Pericles’ building program of the Athenian Acropolis, and continued throughout the Roman imperial period. The quality marble was exhausted already in late antiquity. The pentelic marble is fine-grained and of milk-white color with a tinge of yellow. Frequently occurring elongated mica layers and the high iron content are the main macroscopic characteristic for this marble. The iron content is responsible for the fact that the marble gets a golden brown patina during weathering.",
+                     'Paros': "Paros. The extraction area is located in the center of the Cycladic Island of Paros and extends on the northeastern slope of Mount Marpissa in the plains of Marathi and Chorodaki. The most renowned variety of Parian marble, the lychnites (Paros Marathi Lychnites) was quarried in the valley of Marathi in underground pits (Grotto of the Nymphs and Pan). In antiquity several varieties of marble generically called Paria lithos were extracted. The lychnites variety (Paros Marathi Lichnytes) is a pure white translucent marble of a medium grain size. The Paros Chorodaki and Paros Marathi varieties – which can only be distinguished by their geologic features (isotopic values) exhibit a coarser grain size and a more grayish color.",
+                     'Dokimeion': "Dokimion The ancient quarrying district is situated 23 km northeast of the Turkish city Afyon near the ancient city Dokimion (mod. Iscehisar) in central Anatolia, in the historical landscape of Phrygia. Archaeological research has identified several quarrying areas that has divided it into two large mining areas according to the main mining period: a 'Latin' one with seven quarries (I-VII)139 , which were mainly operated in the imperial period, and a 'Greek' one with eight quarries (A-H), which show mining traces from late antiquity and Byzantine times. A central role within the Latin quarries is played by Quarry I (also called Bacakale), from which the largest quantity of Latin quarry inscriptions - from the Trajanic to the Severanperiod - originates. They testify that the quarries of that time were under imperial administration.",
+                     'Herakleia': "Herakleia The extraction area is located in the immediate vicinity of the town of Herakleia on Latmos, on a ridge of the Latmos massif on the eastern shore of Lake Bafa.",
+                     'Miletos': "...",
+                     'Prokonnesos': "Prokonnesos. The Proconnesian marble is extracted on the Marmara Adas (Turkey); the quarrying area covers about 40 km2 of the northern half of the island. Prokonnesos was one ofthe most popular marble used for architecture in the Roman Imperial period. This material is a coarse-grained, white-gray marble. It is recognizable by the parallel dark gray banding (striations) and by the strong sulfur odor that develops when the crystals are ground.",
+                     'Thasos': "Thasos. The Thasian marble was quarried on the island of the same name in the North Aegean. The marble deposit consists of two types of marble with different chemical composition, a dolomite marble in the north of the island and a calcitic one in its southern part. The extraction districts extend along the east coast of the island: in the north at Cape Phanari(I-V), Saliari and Cape Vathy are the quarrying areas of dolomite marble, in the south at Cape Babouras and Aliki those of calcite marble.",
+                     'Aphrodisias': "Aphrodisias. The ancient district in located in the proximity of the homonymous Carian city of Aphrodisias in Anatolia (nowadays Turkey). The city was renowned in Antiquity for its artists that were active in Rome and different centers of the ancient world. "
+                     }
+
+locations_sites_dict = {'Carrara', 'Pentelikon', 'Paros', 'Dokimeion', 'Herakleia', 'Miletos', 'Prokonnesos', 'Thasos', 'Aphrodisias'}
 
 locations_dict = {'Aphrodisias I': {'lat': 37.725556, 'lon': 28.741667}, 'Aphrodisias II': {'lat': 37.725556, 'lon': 28.741667}, 'Carrara': {'lat': 44.092500, 'lon': 10.126667}, 'Dokimeion': {'lat': 38.837222, 'lon': 30.783889}, 'Herakleia': {'lat':37.472222, 'lon': 27.490000}, 'Miletos': {'lat': 38.0914428, 'lon': 25.8589538}, 'Paros (Chorodaki)': {'lat': 37.082500, 'lon': 25.200278}, 'Paros (Lychnites)': {'lat': 37.082500, 'lon': 25.200278}, 'Paros (Marathi)': {'lat': 37.082500, 'lon': 25.200278}, 'Penteli': {'lat': 38.073889, 'lon': 23.881944}, 'Prokonnesos': {'lat': 40.6214922, 'lon': 27.4940853}, 'Prokonnesos III': {'lat': 40.6214922, 'lon': 27.4940853}, 'Thasos Aliki': {'lat': 40.603056, 'lon': 24.741667}}
 
@@ -138,11 +151,11 @@ if selected == "Upload File":
                 #aphrodisias 1 is also aphrodisias 2
 
 
-                locations_df = pd.DataFrame(locations_dict[site], index=[0])
+                locations_df = pd.DataFrame(locations_sites_dict[site], index=[0])
 
-                for i in groups:
+                for i in groups_sites:
                     if site == i:
-                        text_group = groups_dict[i]
+                        text_group = groups_sites_dict[i]
 
 
                 #Site
@@ -157,13 +170,13 @@ if selected == "more sites":
     #what site
     option = st.selectbox(
         'Of what site do you want to learn more?',
-        ('Aphrodisias I', 'Aphrodisias II', 'Carrara', 'Dokimeion', 'Herakleia', 'Miletos', 'Paros (Chorodaki)', 'Paros (Lychnites)', 'Paros (Marathi)', 'Penteli', 'Prokonnesos', 'Prokonnesos III', 'Thasos Aliki'))
+        ('Carrara', 'Pentelikon', 'Paros', 'Dokimeion', 'Herakleia', 'Miletos', 'Prokonnesos', 'Thasos', 'Aphrodisias'))
 
     #select bar group
     if option:
-        for i in groups:
+        for i in groups_sites:
             if option == i:
-                text_group = groups_dict[i]
+                text_group = groups_sites_dict[i]
 
     #about the group
     st.subheader(f"About {option}")
@@ -173,13 +186,5 @@ if selected == "more sites":
 
     #maybe for more picture or catalogue
     with st.expander("See map"):
-        locations_df = pd.DataFrame(locations_dict[option], index=[0])
+        locations_df = pd.DataFrame(locations_sites_dict[option], index=[0])
         st.map(locations_df, zoom=None, use_container_width=True)
-
-
-
-        # #response to api if uploaded file arrived
-        # if response is not None:
-        #     json_data={"page_status": "allowed"}
-        #     url = "http://127.0.0.1:8000/reverse_c"
-        #     response = requests.post(url, json=json_data)
