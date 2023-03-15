@@ -114,7 +114,8 @@ if selected == "Upload File":
         response = requests.get(url).text
         json_data = json.loads(response)
         site1 = pd.DataFrame(json_data, index=[0])
-        site = site1["prediction"]
+        site2 = site1.to_dict()
+        site = site2["prediction"]
 
         #show results
         if response is not None:
