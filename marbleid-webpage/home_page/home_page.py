@@ -62,7 +62,18 @@ locations_dict_all = {"marble_groups": groups, "lat": [37.725556, 37.725556, 44.
 #Introduction about MarbleID
 if selected == "About MarbleID":
     st.subheader("What does MarbleID do???")
-    st.write("blablabla")
+
+    st.subheader("General description:")
+    st.write("Like no other material, marble, especially in its white variety, has significantly shaped the appearance of ancient art and architecture, so that modern references to the materiality of this historical period often speak of a marble-white antiquity. Materiality is therefore a relevant factor for understanding ancient societies in their complexity, for interpreting cultural interactions and art movements, but also for tracing economic contexts. Beyond its specific relevance for archaeological or art historical research, the materiality of ancient art has another practical application in the field of art provenance and authenticity, i.e., it is of importance for art managing institutions or private entrepreneurs active in the art trade.")
+
+    st.subheader("The motivation.")
+    st.write("The project is intended as a long-term scientific approach to investigate the provenance of white marble and decorative stones used in Antiquity, by focusing on the main, interregional active quarry districts of the Mediterranean. Its primary goal is to determine the marble origin of art works, by assigning them to one of the predefined ancient quarry districts.")
+
+    st.subheader("Project description:")
+    st.write("MarbleID is a ML-based tool for classifying lithic material based on its geologic conditioned features. Depending on the chromatics of the material two different approaches can be distinguished:")
+    st.write("an image-based recognition for the colored stones and a statistical analysis of the geologic features expressed as numerical values in the case of the white marbles.")
+    st.write("The first phase of the project focused on white marble resources from the main ancient districts of the Mediterranean and used a set of 25 numerical parameters for their classification. Despite their relative high number, the parameters required for the analysis result from three different standard laboratory measurements (stabile isotopes, trace elements by ICP MS and micro-inclusions). Supervised learning and an SCV kernel were used to train a model performing classification with 85% accuracy.The application: Our interface offers the possibility to upload a file including the numerical parameters necessary for the model to perform the classification and offers a prediction regarding the origin of the marble of object of interest. ")
+
 #-----------------------------------MAP--------------------------------------
     #map all
     location_df_all = pd.DataFrame(locations_dict_all)
@@ -110,7 +121,7 @@ if selected == "Upload File":
 
         #getting the prediction
 
-        url = "https://prod-ql7u7a2o3q-ew.a.run.app//data"
+        url = "https://prod-ql7u7a2o3q-ew.a.run.app/data"
         response = requests.get(url).text
         json_data = json.loads(response)
         site1 = pd.DataFrame(json_data, index=[0])
