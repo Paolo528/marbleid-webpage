@@ -164,6 +164,7 @@ if selected == "Upload File":
         site1 = pd.DataFrame(json_data, index=[0])
         site2 = site1.iloc[0]["prediction"]
 
+        global site
         for i in groups:
             if site2 == i:
                 site = groups_sites_dict[i]
