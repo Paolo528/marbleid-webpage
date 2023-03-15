@@ -67,14 +67,27 @@ groups_sites_dict = {'Carrara': "Carrara or Luni as it was called in the Roman t
                      'Aphrodisias': "Aphrodisias. The ancient district in located in the proximity of the homonymous Carian city of Aphrodisias in Anatolia (nowadays Turkey). The city was renowned in Antiquity for its artists that were active in Rome and different centers of the ancient world. "
                      }
 
-locations_sites_dict = {'Carrara', 'Pentelikon', 'Paros', 'Dokimeion', 'Herakleia', 'Miletos', 'Prokonnesos', 'Thasos', 'Aphrodisias'}
+locations_sites_dict = {
+'Carrara': {'lat': 44.031458, 'lon': 10.033776},
+'Miletos': {'lat': 37.314884, 'lon': 27.164213},
+'Penteli': {'lat': 38.026000, 'lon': 23.2001},
+'Herakleia': {'lat': 37.5028, 'lon': 27.5264},
+'Aphrodisias': {'lat': 37.423227, 'lon': 28.432040},
+'Dokimion': {'lat': 38.7569, 'lon': 30.5387},
+'Thasos': {'lat': 40.6845, 'lon': 24.6484},
+'Paros': {'lat': 37.0854, 'lon': 25.1515},
+'Prokonnesos': {'lat': 40.591686, 'lon': 27.55568}
+}
+
+latitudes_dict = [44.031458, 38.026000, 37.0854, 38.7569, 37.5028, 37.314884, 40.591686, 40.6845, 37.423227]
+longitudes_dict = [10.033776, 23.2001, 25.1515, 30.5387, 27.5264, 27.164213, 27.55568, 24.6484, 28.432040]
 
 locations_dict = {'Aphrodisias I': {'lat': 37.725556, 'lon': 28.741667}, 'Aphrodisias II': {'lat': 37.725556, 'lon': 28.741667}, 'Carrara': {'lat': 44.092500, 'lon': 10.126667}, 'Dokimeion': {'lat': 38.837222, 'lon': 30.783889}, 'Herakleia': {'lat':37.472222, 'lon': 27.490000}, 'Miletos': {'lat': 38.0914428, 'lon': 25.8589538}, 'Paros (Chorodaki)': {'lat': 37.082500, 'lon': 25.200278}, 'Paros (Lychnites)': {'lat': 37.082500, 'lon': 25.200278}, 'Paros (Marathi)': {'lat': 37.082500, 'lon': 25.200278}, 'Penteli': {'lat': 38.073889, 'lon': 23.881944}, 'Prokonnesos': {'lat': 40.6214922, 'lon': 27.4940853}, 'Prokonnesos III': {'lat': 40.6214922, 'lon': 27.4940853}, 'Thasos Aliki': {'lat': 40.603056, 'lon': 24.741667}}
 
-locations_dict_all = {"marble_groups": groups, "lat": [37.725556, 37.725556, 44.092500, 38.837222, 37.472222, 38.0914428, 37.082500, 37.082500, 37.082500, 38.073889, 40.6214922, 40.6214922, 40.603056], "lon": [28.741667, 28.741667, 10.126667, 30.783889, 27.49000, 25.8589538, 25.200278, 25.200278, 25.200278, 23.881944, 27.4940853, 27.4940853, 24.741667]}
+locations_dict_all = {"Marble-Site": groups_sites, "lat": latitudes_dict, "lon": longitudes_dict}
 #Introduction about MarbleID
 if selected == "About MarbleID":
-    st.subheader("What does MarbleID do???")
+    st.subheader("What is MarbleID?")
 
     st.subheader("General description:")
     st.write("Like no other material, marble, especially in its white variety, has significantly shaped the appearance of ancient art and architecture, so that modern references to the materiality of this historical period often speak of a marble-white antiquity. Materiality is therefore a relevant factor for understanding ancient societies in their complexity, for interpreting cultural interactions and art movements, but also for tracing economic contexts. Beyond its specific relevance for archaeological or art historical research, the materiality of ancient art has another practical application in the field of art provenance and authenticity, i.e., it is of importance for art managing institutions or private entrepreneurs active in the art trade.")
@@ -93,18 +106,13 @@ if selected == "About MarbleID":
     #location_df_all = location_df_all.set_index("marble_groups")
     #st.map(location_df_all, zoom=None, use_container_width=True)
 
-    # compute the center of the map as the average latitude and longitude
-    center_lat = location_df_all['lat'].mean()
-    center_lon = location_df_all['lon'].mean()
-
-    fig = px.scatter_geo(location_df_all, lat="lat", lon="lon",
+    fig = px.scatter_geo(location_df_all,
                      #color="continent", # which column to use to set the color of markers
-                     hover_name="marble_groups",
-                     center={'lat': center_lat, 'lon': center_lon}
+                     hover_name="Marble-Site",
                      ) # column added to hover information
                      #size="pop", # size of markers
                      #projection="natural earth")
-    st.plotly_chart(fig, zoom=7, use_container_width=True)
+    st.plotly_chart(fig, zoom=None, use_container_width=True)
 
 
 
