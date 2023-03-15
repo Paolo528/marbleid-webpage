@@ -70,10 +70,10 @@ groups_sites_dict = {'Carrara': "Carrara or Luni as it was called in the Roman t
 locations_sites_dict = {
 'Carrara': {'lat': 44.031458, 'lon': 10.033776},
 'Miletos': {'lat': 37.314884, 'lon': 27.164213},
-'Penteli': {'lat': 38.026000, 'lon': 23.2001},
+'Pentelikon': {'lat': 38.026000, 'lon': 23.2001},
 'Herakleia': {'lat': 37.5028, 'lon': 27.5264},
 'Aphrodisias': {'lat': 37.423227, 'lon': 28.432040},
-'Dokimion': {'lat': 38.7569, 'lon': 30.5387},
+'Dokimeion': {'lat': 38.7569, 'lon': 30.5387},
 'Thasos': {'lat': 40.6845, 'lon': 24.6484},
 'Paros': {'lat': 37.0854, 'lon': 25.1515},
 'Prokonnesos': {'lat': 40.591686, 'lon': 27.55568}
