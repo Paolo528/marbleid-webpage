@@ -56,7 +56,7 @@ groups = ['Aphrodisias I', 'Aphrodisias II', 'Carrara', 'Dokimeion', 'Herakleia'
 
 groups_sites = ['Carrara', 'Pentelikon', 'Paros', 'Dokimeion', 'Herakleia', 'Miletos', 'Prokonnesos', 'Thasos', 'Aphrodisias']
 
-groups_sites_dict = {'Carrara': "Carrara or Luni as it was called in the Roman times is a marble district located Apuan Alps in the northwestern part of the Italian peninsula; it is a region renowned for its white marble used for high quality sculpture and for the public architecture of the city of Rome. Thequarrying district includes four large areas (Ital. bacini): Pescina-Boccanaglia, Torano, Miseglia and Colonnata that were exploited continuously from Antiquity to the present days. Lunensian marble is a particularly fine-grained white marble with a high proportion of accessory minerals (quartz, mica, dolomite), which leads to the comparatively frequent occurrence of banding.",
+groups_sites_dict_text = {'Carrara': "Carrara or Luni as it was called in the Roman times is a marble district located Apuan Alps in the northwestern part of the Italian peninsula; it is a region renowned for its white marble used for high quality sculpture and for the public architecture of the city of Rome. Thequarrying district includes four large areas (Ital. bacini): Pescina-Boccanaglia, Torano, Miseglia and Colonnata that were exploited continuously from Antiquity to the present days. Lunensian marble is a particularly fine-grained white marble with a high proportion of accessory minerals (quartz, mica, dolomite), which leads to the comparatively frequent occurrence of banding.",
                      'Pentelikon': "The quarrying district Mount Pentelikon is located about 14 km northeast of Athens. Its exploitation probably began in 6th c. B.C., reached a peak in Classical period (5th c. BC), when the material was used for Pericles’ building program of the Athenian Acropolis, and continued throughout the Roman imperial period. The quality marble was exhausted already in late antiquity. The pentelic marble is fine-grained and of milk-white color with a tinge of yellow. Frequently occurring elongated mica layers and the high iron content are the main macroscopic characteristic for this marble. The iron content is responsible for the fact that the marble gets a golden brown patina during weathering.",
                      'Paros': "Paros. The extraction area is located in the center of the Cycladic Island of Paros and extends on the northeastern slope of Mount Marpissa in the plains of Marathi and Chorodaki. The most renowned variety of Parian marble, the lychnites (Paros Marathi Lychnites) was quarried in the valley of Marathi in underground pits (Grotto of the Nymphs and Pan). In antiquity several varieties of marble generically called Paria lithos were extracted. The lychnites variety (Paros Marathi Lichnytes) is a pure white translucent marble of a medium grain size. The Paros Chorodaki and Paros Marathi varieties – which can only be distinguished by their geologic features (isotopic values) exhibit a coarser grain size and a more grayish color.",
                      'Dokimeion': "Dokimion The ancient quarrying district is situated 23 km northeast of the Turkish city Afyon near the ancient city Dokimion (mod. Iscehisar) in central Anatolia, in the historical landscape of Phrygia. Archaeological research has identified several quarrying areas that has divided it into two large mining areas according to the main mining period: a 'Latin' one with seven quarries (I-VII)139 , which were mainly operated in the imperial period, and a 'Greek' one with eight quarries (A-H), which show mining traces from late antiquity and Byzantine times. A central role within the Latin quarries is played by Quarry I (also called Bacakale), from which the largest quantity of Latin quarry inscriptions - from the Trajanic to the Severanperiod - originates. They testify that the quarries of that time were under imperial administration.",
@@ -182,7 +182,7 @@ if selected == "Upload File":
 
                 for i in groups_sites:
                     if site == i:
-                        text_group = groups_sites_dict[i]
+                        text_group = groups_sites_dict_text[i]
 
 
                 #Site
@@ -203,7 +203,7 @@ if selected == "more sites":
     if option:
         for i in groups_sites:
             if option == i:
-                text_group = groups_sites_dict[i]
+                text_group = groups_sites_dict_text[i]
 
     #about the group
     st.subheader(f"About {option}")
