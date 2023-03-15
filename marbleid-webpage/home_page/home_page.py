@@ -106,7 +106,7 @@ if selected == "About MarbleID":
     #location_df_all = location_df_all.set_index("marble_groups")
     #st.map(location_df_all, zoom=None, use_container_width=True)
 
-    fig = px.scatter_geo(location_df_all,
+    fig = px.scatter_geo(location_df_all, lat=locations_dict_all["lat"], lon=locations_dict_all["lon"],
                      #color="continent", # which column to use to set the color of markers
                      hover_name="Marble-Site",
                      ) # column added to hover information
@@ -121,8 +121,8 @@ if selected == "About MarbleID":
 
 #setup file upload
 if selected == "Upload File":
-    st.subheader("?header?")
-    st.write("info")
+    #st.subheader("?header?")
+    #st.write("info")
     with st.expander("expand to upload your file"):
         uploaded_file = st.file_uploader(
             label="Upload your CSV or Excel file.",
@@ -167,7 +167,7 @@ if selected == "Upload File":
 
 
                 #Site
-                st.subheader(f"{site}")
+                st.subheader(f"Your sample was querried in: {site}")
 
 
                 #map the site
