@@ -111,7 +111,7 @@ if selected == "Upload File":
         #getting the prediction
 
         url = "https://prod-ql7u7a2o3q-ew.a.run.app/data"
-        response = requests.get(url).json()
+        response = requests.get(url).text
         site1 = json.loads(response)
         site = site1["prediction"]
 
