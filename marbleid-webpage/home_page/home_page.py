@@ -175,9 +175,9 @@ if selected == "Upload File":
 
 #more sites page
 if selected == "more sites":
+    st.subheader("About what ite do you want to learn more about?")
     #what site
     option = st.selectbox(
-        'Of what site do you want to learn more?',
         ('Carrara', 'Pentelikon', 'Paros', 'Dokimeion', 'Herakleia', 'Miletos', 'Prokonnesos', 'Thasos', 'Aphrodisias'))
 
     #select bar group
