@@ -61,7 +61,7 @@ groups_sites_dict = {'Carrara': "Carrara or Luni as it was called in the Roman t
                      'Paros': "Paros. The extraction area is located in the center of the Cycladic Island of Paros and extends on the northeastern slope of Mount Marpissa in the plains of Marathi and Chorodaki. The most renowned variety of Parian marble, the lychnites (Paros Marathi Lychnites) was quarried in the valley of Marathi in underground pits (Grotto of the Nymphs and Pan). In antiquity several varieties of marble generically called Paria lithos were extracted. The lychnites variety (Paros Marathi Lichnytes) is a pure white translucent marble of a medium grain size. The Paros Chorodaki and Paros Marathi varieties – which can only be distinguished by their geologic features (isotopic values) exhibit a coarser grain size and a more grayish color.",
                      'Dokimeion': "Dokimion The ancient quarrying district is situated 23 km northeast of the Turkish city Afyon near the ancient city Dokimion (mod. Iscehisar) in central Anatolia, in the historical landscape of Phrygia. Archaeological research has identified several quarrying areas that has divided it into two large mining areas according to the main mining period: a 'Latin' one with seven quarries (I-VII)139 , which were mainly operated in the imperial period, and a 'Greek' one with eight quarries (A-H), which show mining traces from late antiquity and Byzantine times. A central role within the Latin quarries is played by Quarry I (also called Bacakale), from which the largest quantity of Latin quarry inscriptions - from the Trajanic to the Severanperiod - originates. They testify that the quarries of that time were under imperial administration.",
                      'Herakleia': "Herakleia The extraction area is located in the immediate vicinity of the town of Herakleia on Latmos, on a ridge of the Latmos massif on the eastern shore of Lake Bafa.",
-                     'Miletos': "...",
+                     'Miletos': "The quarries of Miletos are located in the proximity of the ancient homonymous Ionian city on the south shores of the ancient Latmian Golf, now the Bafa Lake in the western part of Turkey. They provide a white-grey marble variety used primarily on a local level.",
                      'Prokonnesos': "Prokonnesos. The Proconnesian marble is extracted on the Marmara Adas (Turkey); the quarrying area covers about 40 km2 of the northern half of the island. Prokonnesos was one ofthe most popular marble used for architecture in the Roman Imperial period. This material is a coarse-grained, white-gray marble. It is recognizable by the parallel dark gray banding (striations) and by the strong sulfur odor that develops when the crystals are ground.",
                      'Thasos': "Thasos. The Thasian marble was quarried on the island of the same name in the North Aegean. The marble deposit consists of two types of marble with different chemical composition, a dolomite marble in the north of the island and a calcitic one in its southern part. The extraction districts extend along the east coast of the island: in the north at Cape Phanari(I-V), Saliari and Cape Vathy are the quarrying areas of dolomite marble, in the south at Cape Babouras and Aliki those of calcite marble.",
                      'Aphrodisias': "Aphrodisias. The ancient district in located in the proximity of the homonymous Carian city of Aphrodisias in Anatolia (nowadays Turkey). The city was renowned in Antiquity for its artists that were active in Rome and different centers of the ancient world. "
@@ -85,6 +85,22 @@ longitudes_dict = [10.033776, 23.2001, 25.1515, 30.5387, 27.5264, 27.164213, 27.
 locations_dict = {'Aphrodisias I': {'lat': 37.725556, 'lon': 28.741667}, 'Aphrodisias II': {'lat': 37.725556, 'lon': 28.741667}, 'Carrara': {'lat': 44.092500, 'lon': 10.126667}, 'Dokimeion': {'lat': 38.837222, 'lon': 30.783889}, 'Herakleia': {'lat':37.472222, 'lon': 27.490000}, 'Miletos': {'lat': 38.0914428, 'lon': 25.8589538}, 'Paros (Chorodaki)': {'lat': 37.082500, 'lon': 25.200278}, 'Paros (Lychnites)': {'lat': 37.082500, 'lon': 25.200278}, 'Paros (Marathi)': {'lat': 37.082500, 'lon': 25.200278}, 'Penteli': {'lat': 38.073889, 'lon': 23.881944}, 'Prokonnesos': {'lat': 40.6214922, 'lon': 27.4940853}, 'Prokonnesos III': {'lat': 40.6214922, 'lon': 27.4940853}, 'Thasos Aliki': {'lat': 40.603056, 'lon': 24.741667}}
 
 locations_dict_all = {"Marble-Site": groups_sites, "lat": latitudes_dict, "lon": longitudes_dict}
+
+groups_sites_dict = {
+'Aphrodisias I': 'Aphrodisias',
+'Aphrodisias II': 'Aphrodisias',
+'Carrara': 'Carrara',
+'Dokimeion': 'Dokimeion',
+'Herakleia': 'Herakleia',
+'Miletos': 'Miletos',
+'Paros (Chorodaki)': 'Paros',
+'Paros (Lychnites)': 'Paros',
+'Paros (Marathi)': 'Paros',
+'Pentelikon': 'Pentelikon',
+'Prokonnesos': 'Prokonnesos',
+'Prokonnesos III': 'Prokonnesos',
+'Thasos Aliki': 'Thasos'
+}
 #Introduction about MarbleID
 if selected == "About MarbleID":
     st.subheader("What is MarbleID?")
@@ -146,7 +162,11 @@ if selected == "Upload File":
         response = requests.get(url).text
         json_data = json.loads(response)
         site1 = pd.DataFrame(json_data, index=[0])
-        site = site1.iloc[0]["prediction"]
+        site2 = site1.iloc[0]["prediction"]
+
+        for i in groups:
+            if site2 == i:
+                site = groups_sites_dict[i]
 
 
         #show results
@@ -167,7 +187,7 @@ if selected == "Upload File":
 
 
                 #Site
-                st.subheader(f"Your sample was querried in: {site}")
+                st.subheader(f"Result of the analysis: {site}")
 
 
                 #map the site
