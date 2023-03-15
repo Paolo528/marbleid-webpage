@@ -108,11 +108,11 @@ if selected == "About MarbleID":
 
     fig = px.scatter_geo(location_df_all, lat=locations_dict_all["lat"], lon=locations_dict_all["lon"],
                      #color="continent", # which column to use to set the color of markers
-                     hover_name="Marble-Site",
+                     hover_name="Marble-Site", zoom=2
                      ) # column added to hover information
                      #size="pop", # size of markers
                      #projection="natural earth")
-    st.plotly_chart(fig, zoom=None, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True)
 
 
 
