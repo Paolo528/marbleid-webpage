@@ -16,21 +16,21 @@ st.set_option("deprecation.showfileUploaderEncoding", False)
 st.set_page_config(page_title="MarbleID", layout="wide")
 
 #st.image(image, use_column_width=True)
-def add_bg_from_url():
-    st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             background-image: url("https://raw.githubusercontent.com/Paolo528/marbleid-webpage/master/images/marble_background.jpg");
-             background-attachment: fixed;
-             background-size: cover
-         }}
-         </style>
-         """,
-         unsafe_allow_html=True
-     )
+# def add_bg_from_url():
+#     st.markdown(
+#          f"""
+#          <style>
+#          .stApp {{
+#              background-image: url("https://raw.githubusercontent.com/Paolo528/marbleid-webpage/master/images/marble_background.jpg");
+#              background-attachment: fixed;
+#              background-size: cover
+#          }}
+#          </style>
+#          """,
+#          unsafe_allow_html=True
+#      )
 
-add_bg_from_url()
+#add_bg_from_url()
 
 st.title("MarbleID")
 
@@ -185,6 +185,6 @@ if selected == "more sites":
 
 
     #maybe for more picture or catalogue
-    with st.expander("See map"):
-        locations_df = pd.DataFrame(locations_sites_dict[option], index=[0])
-        st.map(locations_df, zoom=None, use_container_width=True)
+    st.subheader(f"Location of {option}")
+    locations_df = pd.DataFrame(locations_sites_dict[option], index=[0])
+    st.map(locations_df, zoom=None, use_container_width=True)
