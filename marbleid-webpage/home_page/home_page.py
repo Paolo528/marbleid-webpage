@@ -164,10 +164,6 @@ if selected == "Upload File":
         site1 = pd.DataFrame(json_data, index=[0])
         site2 = site1.iloc[0]["prediction"]
 
-        global site
-        for i in groups:
-            if site2 == i:
-                site = groups_sites_dict[i]
 
 
         #show results
@@ -178,7 +174,9 @@ if selected == "Upload File":
                 # for loop for getting correct site displayed
                 #groups = ['Aphrodisias I', 'Aphrodisias II', 'Carrara', 'Dokimeion', 'Herakleia', 'Miletos', 'Paros (Chorodaki)', 'Paros (Lychnites)', 'Paros (Marathi)', 'Penteli', 'Prokonnesos', 'Prokonnesos III', 'Thasos Aliki']
                 #aphrodisias 1 is also aphrodisias 2
-
+                for i in groups:
+                    if site2 == i:
+                        site = groups_sites_dict[i]
 
                 locations_df = pd.DataFrame(locations_sites_dict[site], index=[0])
 
