@@ -112,7 +112,8 @@ if selected == "Upload File":
 
         url = "https://prod-ql7u7a2o3q-ew.a.run.app/data"
         response = requests.get(url).text
-        site1 = pd.DataFrame(response).to_dict()
+        json_data = json.loads(response)
+        site1 = pd.DataFrame(json_data, index=[0])
         site = site1["prediction"]
 
         #show results
