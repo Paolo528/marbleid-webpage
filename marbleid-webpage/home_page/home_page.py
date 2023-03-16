@@ -67,22 +67,34 @@ groups_sites_dict_text = {'Carrara': "Carrara or Luni as it was called in the Ro
                      'Aphrodisias': "Aphrodisias. The ancient district in located in the proximity of the homonymous Carian city of Aphrodisias in Anatolia (nowadays Turkey). The city was renowned in Antiquity for its artists that were active in Rome and different centers of the ancient world. "
                      }
 
-locations_sites_dict = {
-'Carrara': {'lat': 44.031458, 'lon': 10.033776},
-'Miletos': {'lat': 37.314884, 'lon': 27.164213},
-'Pentelikon': {'lat': 38.026000, 'lon': 23.2001},
-'Herakleia': {'lat': 37.5028, 'lon': 27.5264},
-'Aphrodisias': {'lat': 37.423227, 'lon': 28.432040},
-'Dokimeion': {'lat': 38.7569, 'lon': 30.5387},
-'Thasos': {'lat': 40.6845, 'lon': 24.6484},
-'Paros': {'lat': 37.0854, 'lon': 25.1515},
-'Prokonnesos': {'lat': 40.591686, 'lon': 27.55568}
-}
+# locations_sites_dict_old = {
+# 'Carrara': {'lat': 44.031458, 'lon': 10.033776},
+# 'Miletos': {'lat': 37.314884, 'lon': 27.164213},
+# 'Pentelikon': {'lat': 38.026000, 'lon': 23.2001},
+# 'Herakleia': {'lat': 37.5028, 'lon': 27.5264},
+# 'Aphrodisias': {'lat': 37.423227, 'lon': 28.432040},
+# 'Dokimeion': {'lat': 38.7569, 'lon': 30.5387},
+# 'Thasos': {'lat': 40.6845, 'lon': 24.6484},
+# 'Paros': {'lat': 37.0854, 'lon': 25.1515},
+# 'Prokonnesos': {'lat': 40.591686, 'lon': 27.55568}
+# }
 
-latitudes_dict = [44.031458, 38.026000, 37.0854, 38.7569, 37.5028, 37.314884, 40.591686, 40.6845, 37.423227]
-longitudes_dict = [10.033776, 23.2001, 25.1515, 30.5387, 27.5264, 27.164213, 27.55568, 24.6484, 28.432040]
+locations_sites_dict = {'Aphrodisias': {'lat': 37.725556, 'lon': 28.741667},
+                            'Carrara': {'lat': 44.092500, 'lon': 10.126667},
+                            'Dokimeion': {'lat': 38.837222, 'lon': 30.783889},
+                            'Herakleia': {'lat': 37.472222, 'lon': 27.490000},
+                            'Miletos': {'lat': 37.4529, 'lon': 27.5078},
+                            'Paros': {'lat': 37.082500, 'lon': 25.200278},
+                            'Pentelikon': {'lat': 38.073889, 'lon': 23.881944},
+                            'Prokonnesos': {'lat': 40.650833, 'lon': 27.656944},
+                            'Thasos': {'lat': 40.603056, 'lon': 24.741667}}
 
-locations_dict = {'Aphrodisias I': {'lat': 37.725556, 'lon': 28.741667}, 'Aphrodisias II': {'lat': 37.725556, 'lon': 28.741667}, 'Carrara': {'lat': 44.092500, 'lon': 10.126667}, 'Dokimeion': {'lat': 38.837222, 'lon': 30.783889}, 'Herakleia': {'lat':37.472222, 'lon': 27.490000}, 'Miletos': {'lat': 38.0914428, 'lon': 25.8589538}, 'Paros (Chorodaki)': {'lat': 37.082500, 'lon': 25.200278}, 'Paros (Lychnites)': {'lat': 37.082500, 'lon': 25.200278}, 'Paros (Marathi)': {'lat': 37.082500, 'lon': 25.200278}, 'Penteli': {'lat': 38.073889, 'lon': 23.881944}, 'Prokonnesos': {'lat': 40.6214922, 'lon': 27.4940853}, 'Prokonnesos III': {'lat': 40.6214922, 'lon': 27.4940853}, 'Thasos Aliki': {'lat': 40.603056, 'lon': 24.741667}}
+
+latitudes_dict = [44.092500, 38.837222, 37.082500, 38.837222, 37.472222, 37.4529, 40.650833, 40.603056, 37.725556]
+
+longitudes_dict = [10.126667, 23.881944, 25.200278, 30.783889, 27.490000, 27.5078, 27.656944, 24.741667, 28.741667]
+
+#locations_dict = {'Aphrodisias I': {'lat': 37.725556, 'lon': 28.741667}, 'Aphrodisias II': {'lat': 37.725556, 'lon': 28.741667}, 'Carrara': {'lat': 44.092500, 'lon': 10.126667}, 'Dokimeion': {'lat': 38.837222, 'lon': 30.783889}, 'Herakleia': {'lat':37.472222, 'lon': 27.490000}, 'Miletos': {'lat': 38.0914428, 'lon': 25.8589538}, 'Paros (Chorodaki)': {'lat': 37.082500, 'lon': 25.200278}, 'Paros (Lychnites)': {'lat': 37.082500, 'lon': 25.200278}, 'Paros (Marathi)': {'lat': 37.082500, 'lon': 25.200278}, 'Penteli': {'lat': 38.073889, 'lon': 23.881944}, 'Prokonnesos': {'lat': 40.6214922, 'lon': 27.4940853}, 'Prokonnesos III': {'lat': 40.6214922, 'lon': 27.4940853}, 'Thasos Aliki': {'lat': 40.603056, 'lon': 24.741667}}
 
 locations_dict_all = {"Marble-Site": groups_sites, "lat": latitudes_dict, "lon": longitudes_dict}
 
@@ -101,34 +113,115 @@ groups_sites_dict = {
 'Prokonnesos III': 'Prokonnesos',
 'Thasos Aliki': 'Thasos'
 }
+
+geo_json = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              2.731819537519442,
+              47.907285422886275
+            ],
+            [
+              9.704588642742095,
+              28.416808182331238
+            ],
+            [
+              40.727121366952844,
+              28.416808182331238
+            ],
+            [
+              41.09653519576355,
+              46.621316364650994
+            ],
+            [
+              2.731819537519442,
+              47.907285422886275
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    }
+  ]
+}
+
+carrara_img1 = "https://raw.githubusercontent.com/Paolo528/marbleid-webpage/master/images/Carrara/IMG_0712.JPG"
+carrara_img2 = "https://raw.githubusercontent.com/Paolo528/marbleid-webpage/master/images/Carrara/Abb.3.7_m.Lunense_HF_K_CarraraMuseum.JPG"
+#carrara_img3 = "https://raw.githubusercontent.com/Paolo528/marbleid-webpage/master/images/Carrara/Abb.3.6.Lunense.png"
+
+prokonnesos_img1 = "https://raw.githubusercontent.com/Paolo528/marbleid-webpage/master/images/Prokonnesos/IMG_2701.JPG"
+#prokonnesos_img2 = "https://raw.githubusercontent.com/Paolo528/marbleid-webpage/master/images/Prokonnesos/Abb[…]s.Asgari_Matthew%2C%201995%2C%20Abb1%2010%20km%202cm.png"
+prokonnesos_img3 = "https://raw.githubusercontent.com/Paolo528/marbleid-webpage/master/images/Prokonnesos/IMG_2707.JPG"
+
+aphrodisias = "https://raw.githubusercontent.com/Paolo528/marbleid-webpage/master/images/Aphrodisias/IMG_1188.JPG"
+
+thasos_img1 = "https://raw.githubusercontent.com/Paolo528/marbleid-webpage/master/images/Thasos/IMG_4282.JPG"
+
+paros_img1 = "https://raw.githubusercontent.com/Paolo528/marbleid-webpage/master/images/Paros/IMG_3819.jpeg"
+
+dict_sites_img = {'Carrara': "is",
+'Miletos': "no",
+'Pentelikon': "no",
+'Herakleia': "no",
+'Aphrodisias': "no",
+'Dokimeion': "no",
+'Thasos': "no",
+'Paros': "no",
+'Prokonnesos': "is"
+}
+
+
 #Introduction about MarbleID
 if selected == "About MarbleID":
-    st.subheader("What is MarbleID?")
 
-    st.subheader("General description:")
+    st.subheader("General description")
     st.write("Like no other material, marble, especially in its white variety, has significantly shaped the appearance of ancient art and architecture, so that modern references to the materiality of this historical period often speak of a marble-white antiquity. Materiality is therefore a relevant factor for understanding ancient societies in their complexity, for interpreting cultural interactions and art movements, but also for tracing economic contexts. Beyond its specific relevance for archaeological or art historical research, the materiality of ancient art has another practical application in the field of art provenance and authenticity, i.e., it is of importance for art managing institutions or private entrepreneurs active in the art trade.")
 
-    st.subheader("The motivation.")
+
+    #col1, col2, col3 = st.columns(3)
+    # Display the first image in the first column
+
+    st.image(aphrodisias, caption='Aphrodisias (Southwest-Turkey)')
+    # Display the second image in the second column
+
+    #     st.image(thasos_img1, caption='Beach of Thasos (North Aegean -Greece)')
+    # #Display the third image column
+
+    #     st.image(paros_img1, caption="Island of Paros (Aegaensea-Greece)")
+
+
+    st.subheader("The motivation")
     st.write("The project is intended as a long-term scientific approach to investigate the provenance of white marble and decorative stones used in Antiquity, by focusing on the main, interregional active quarry districts of the Mediterranean. Its primary goal is to determine the marble origin of art works, by assigning them to one of the predefined ancient quarry districts.")
 
-    st.subheader("Project description:")
+    st.image(thasos_img1, caption='Thasos Aliki (North Aegean, Greece)')
+
+    st.subheader("Project description")
     st.write("MarbleID is a ML-based tool for classifying lithic material based on its geologic conditioned features. Depending on the chromatics of the material two different approaches can be distinguished:")
     st.write("an image-based recognition for the colored stones and a statistical analysis of the geologic features expressed as numerical values in the case of the white marbles.")
     st.write("The first phase of the project focused on white marble resources from the main ancient districts of the Mediterranean and used a set of 25 numerical parameters for their classification. Despite their relative high number, the parameters required for the analysis result from three different standard laboratory measurements (stabile isotopes, trace elements by ICP MS and micro-inclusions). Supervised learning and an SCV kernel were used to train a model performing classification with 85% accuracy.The application: Our interface offers the possibility to upload a file including the numerical parameters necessary for the model to perform the classification and offers a prediction regarding the origin of the marble of object of interest. ")
 
+    st.image(paros_img1, caption="Island of Paros (Cyclades, Greece)")
 #-----------------------------------MAP--------------------------------------
     #map all
     location_df_all = pd.DataFrame(locations_dict_all)
-    #location_df_all = location_df_all.set_index("marble_groups")
-    #st.map(location_df_all, zoom=None, use_container_width=True)
+    location_df_all = location_df_all.set_index("Marble-Site")
+    st.map(location_df_all, zoom=None, use_container_width=True)
 
-    fig = px.scatter_geo(location_df_all, lat=locations_dict_all["lat"], lon=locations_dict_all["lon"],
-                     #color="continent", # which column to use to set the color of markers
-                     hover_name="Marble-Site"
-                     ) # column added to hover information
-                     #size="pop", # size of markers
-                     #projection="natural earth")
-    st.plotly_chart(fig, use_container_width=True)
+    # fig = px.scatter_geo(location_df_all, lat=locations_dict_all["lat"], lon=locations_dict_all["lon"], center={"lat": 34.553127, "lon": 18.048012},
+    #                  #color="continent", # which column to use to set the color of markers
+    #                  fitbounds=[False, "location",geo_json], hover_name="Marble-Site"
+    #                  ) # column added to hover information
+    #                  #size="pop", # size of markers
+    #                  #projection="natural earth")
+    # st.plotly_chart(fig, use_container_width=True)
+
+    # st.write(fig.to_dict())
 
 
 
@@ -193,7 +286,7 @@ if selected == "Upload File":
                 st.map(locations_df, zoom=None, use_container_width=True)
 
 #more sites page
-if selected == "more sites":
+if selected == "Ancient Quarry-Districts":
     st.subheader("About what ite do you want to learn more about?")
     #what site
     option = st.selectbox("Select",
@@ -204,6 +297,27 @@ if selected == "more sites":
         for i in groups_sites:
             if option == i:
                 text_group = groups_sites_dict_text[i]
+                if option == "Carrara":
+                    col1, col2 = st.columns(2)
+                    # Display the first image in the first column
+                    with col1:
+                        st.image(carrara_img1, caption='')
+
+                    # Display the second image in the second column
+                    with col2:
+                        st.image(carrara_img2, caption='')
+
+                elif option == "Prokonnesos":
+                    col1, col2 = st.columns(2)
+                    # Display the first image in the first column
+                    with col1:
+                        st.image(prokonnesos_img1, caption='')
+
+                    # Display the second image in the second column
+                    with col2:
+                        st.image(prokonnesos_img3, caption='')
+
+
 
     #about the group
     st.subheader(f"About {option}")
