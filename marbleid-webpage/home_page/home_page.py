@@ -47,7 +47,7 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 #nacvigation menu
 selected = option_menu(
     menu_title=None,
-    options=["About MarbleID", "Upload File", "Ancient Quarry-Districts"],
+    options=["About MarbleID", "Upload File", "Ancient Quarry Districts"],
     icons=[],
     orientation="horizontal")
 
@@ -286,8 +286,8 @@ if selected == "Upload File":
                 st.map(locations_df, zoom=None, use_container_width=True)
 
 #more sites page
-if selected == "Ancient Quarry-Districts":
-    st.subheader("About what ite do you want to learn more about?")
+if selected == "Ancient Quarry Districts":
+    st.subheader("Learn more about Ancient Quarry Districts!")
     #what site
     option = st.selectbox("Select",
         ('Carrara', 'Pentelikon', 'Paros', 'Dokimeion', 'Herakleia', 'Miletos', 'Prokonnesos', 'Thasos', 'Aphrodisias'))
