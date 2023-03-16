@@ -20,7 +20,7 @@ def add_bg_from_url():
           f"""
           <style>
           .stApp {{
-              background-image: url("https://raw.githubusercontent.com/Paolo528/marbleid-webpage/master/images/marble_background.jpg");
+              background-image: url("https://raw.githubusercontent.com/Paolo528/marbleid-webpage/master/images/carrara_big.PNG");
               background-attachment: fixed;
               background-size: cover
           }}
