@@ -47,7 +47,7 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 #nacvigation menu
 selected = option_menu(
     menu_title=None,
-    options=["About MarbleID", "Upload File", "more sites"],
+    options=["About MarbleID", "Upload File", "Ancient Quarry-Districts"],
     icons=[],
     orientation="horizontal")
 
